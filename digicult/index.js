@@ -5,7 +5,7 @@ var bodyparser = require('body-parser');
 var app = express();
 
 app.use(express.static(__dirname + '/views'));
-app.use(express.static(__dirname + '/views/admin'));
+//app.use(express.static(__dirname + '/views/admin'));
 app.use(bodyparser.urlencoded());
 
 app.set('view engine', 'ejs');
