@@ -61,14 +61,6 @@ app.get('/help_request_list', function (req,res){
     });
 
 });
-app.get('/affected_areas', function (req,res){
-    connection.query("SELECT * FROM detected_areas", function (err,result,fields) {
-        if (err) throw err;
-        console.log(result);
-        res.render('admin/affected_areas', {data: result});
-    });
-
-});
 
 app.post('/authenticate_admin',function (req,res) {
     connection.query("SELECT * FROM auth WHERE username = '"+req.body.email+"' AND password = '"+req.body.password+"'", function (err, result,fields) {

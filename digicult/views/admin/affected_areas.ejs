@@ -13,13 +13,24 @@
     <script>
 
 // First, create an object containing LatLng and population for each city.
-var citymap = {<% data.forEach(function (item, index) { %>
-    <%= item.detected_area %>:{
-            center: {lat: <%= item.lattitude %>, lng: <%= item.longitude %>},
-            population: 100
-        },
-    <% }); %>
-}
+var citymap = {
+    Lugari: {
+        center: {lat: 0.652084, lng: 34.873999},
+        population: 100
+    },
+    Malava: {
+        center: {lat: 0.447302, lng:  34.854362},
+        population: 100
+    },
+    Butere: {
+        center: {lat: 0.217452, lng: 34.493337},
+        population: 100
+    },
+    Shinyalu: {
+        center: {lat: 0.227903, lng:  34.815159},
+        population: 100
+    }
+};
 function initMap() {
     // Create the map.
     var map = new google.maps.Map(document.getElementById('map'), {
