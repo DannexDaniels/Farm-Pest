@@ -7,7 +7,7 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["july", "aug", "sep", "oct", "nov", "dec", "jan", "feb", "mar", "april", "may", "junecd", "Mar 13"],
     datasets: [{
       label: "Sessions",
       lineTension: 0.3,
@@ -99,10 +99,10 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'pie',
   data: {
-    labels: ["Blue", "Red", "Yellow", "Green"],
+    labels: ["Low", "Medium", "High"],
     datasets: [{
-      data: [12.21, 15.58, 11.25, 8.32],
-      backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+      data: [12.21, 15.58, 11.25],
+      backgroundColor: ['#007bff', '#dc3545', '#ffc107'],
     }],
   },
 });
