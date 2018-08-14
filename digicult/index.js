@@ -23,6 +23,7 @@ app.get('/',function (req,res) {
     res.render('home');
 });
 
+
 app.get('/admin',function (req,res) {
     connection.query("SELECT ( SELECT COUNT(*) FROM farmer ) AS farmer, ( SELECT COUNT(*) FROM smartfarmer ) AS specialist, ( SELECT COUNT(*) FROM agrovet ) AS agrovets, ( SELECT COUNT(*) FROM help_requests ) AS requests FROM dual", function (err,result,fields) {
         if (err) throw err;
@@ -30,6 +31,7 @@ app.get('/admin',function (req,res) {
         res.render('admin/index',{farmer: result[0].farmer, specialist: result[0].specialist, requests: result[0].requests, agrovet: result[0].agrovets});
     });
 });
+
 app.get('/farmers_list', function (req,res){
     connection.query("SELECT * FROM farmer", function (err,result,fields) {
         if (err) throw err;
@@ -68,8 +70,7 @@ app.post('/authenticate_admin',function (req,res) {
         if(result === undefined || result.length == 0){
             console.log("nothing found");
         }else{
-            console.log(result);
-            res.render('admin');
+            res.redirect('/admin')
         }
 
     });
@@ -83,6 +84,8 @@ app.post('/add_agrovet',function (req,res) {
         res.render('home');
     });
 });
+
+
 
 app.listen(1337,function () {
     console.log('server is up and running');
